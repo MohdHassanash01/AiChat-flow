@@ -25,4 +25,16 @@ OPENROUTER_API_KEY=your_OPENROUTER_API_KEY
 ### Frontend (.env)
 VITE_BACKEND_URL=http://localhost:3000
 
+## How to Run Locally
 
+### Backend
+```bash
+cd server
+npm install
+npm run dev
+
+### Frontend
+```bash
+cd client
+npm install
+npm run dev
