@@ -36,7 +36,7 @@ promptRouter.post("/prompt",async function(req,res){
         headers: {
           Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
           "Content-Type": "application/json",
-          "HTTP-Referer": `${process.env.HTTP-Referer_URL}`,
+          "HTTP-Referer": process.env.HTTP_REFERER_URL,
           "X-Title": "Future Blick",
         },
       }
