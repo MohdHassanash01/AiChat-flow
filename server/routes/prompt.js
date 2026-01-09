@@ -47,7 +47,7 @@ promptRouter.post("/prompt",async function(req,res){
      const aiResponce =
       response.data.choices[0].message.content;
 
-    //   console.log("ai responce : ",aiAnswer);
+      console.log("ai responce : ",aiResponce);
       
     const cleanText = cleanAIResponse(aiResponce);
 
