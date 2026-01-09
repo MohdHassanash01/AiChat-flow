@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .truncate-1 {
   overflow: hidden;
   display: -webkit-box;
@@ -42,4 +46,27 @@
 
 .history-card small {
   color: #9ca3af;
+}
+
+
+
+.history-panel {
+  overflow-y: auto;
+  max-height: 100vh;
+  scrollbar-width: thin;          /* Firefox */
+  scrollbar-color: #A6A09B #f1f1f1;
+}
+
+/* Chrome, Edge, Safari */
+.history-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.history-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.history-panel::-webkit-scrollbar-thumb {
+  background-color: #efdf9f;
+  border-radius: 12px;
 }

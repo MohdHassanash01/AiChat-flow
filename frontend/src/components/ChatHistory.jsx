@@ -70,13 +70,20 @@ const {
         {/* Chats */}
       {chats.map((item) => (
         <div
-         onClick={() => selectChat(item)}
-          key={item._id}
-          className="history-card bg-white p-2 rounded shadow mb-2 cursor-pointer"
+         
+          className="history-card bg-white p-2 rounded shadow mb-2 "
         >
+
+          <div
+          className='cursor-pointer'
+          onClick={() => selectChat(item)}
+          key={item._id}>
+
           <p className="block text-sm font-semibold truncate-1">{item.prompt}</p>
 
           <p className="text-sm text-gray-700 truncate-2">{item.response}</p>
+
+        </div>
 
           <small className="text-gray-400 flex justify-between">
             <span>

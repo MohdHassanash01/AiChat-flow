@@ -287,7 +287,7 @@ useEffect(() => {
     <div className="flex h-screen font-serif bg-[#f6f7f9]">
       
       {/* LEFT SIDEBAR */}
-      <aside className="w-76 border-r border-stone-300 p-4 overflow-y-auto bg-stone-200">
+      <aside className="history-panel w-76 border-r border-stone-300 p-4 overflow-y-auto bg-stone-200">
         <ChatHistory />
       </aside>
 
