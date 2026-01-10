@@ -31,6 +31,7 @@ This is a MERN stack application built as part of the **Future Blink Developer T
 MONGO_URI=your_mongodb_uri
 PORT=3000
 OPENROUTER_API_KEY=your_OPENROUTER_API_KEY
+HTTP_REFERER_URL=your_HTTP_REFERER_URL
 ```
 
 ### Frontend (`.env`)
