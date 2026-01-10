@@ -70,7 +70,7 @@ const {
         {/* Chats */}
       {chats.map((item) => (
         <div
-         
+         key={item._id}
           className="history-card bg-white p-2 rounded shadow mb-2 "
         >
 

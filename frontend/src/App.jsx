@@ -173,6 +173,8 @@ const nodesWithHandlers = nodes.map((node) =>
           : node
       )
     );
+
+    return data.answer
   } catch (err) {
     console.error(err);
   }finally{
@@ -183,34 +185,41 @@ const nodesWithHandlers = nodes.map((node) =>
 
 const saveChat = async () => {
   const inputNode = nodes.find((n) => n.id === "n1");
-  const outputNode = nodes.find((n) => n.id === "n2");
-
   const prompt = inputNode?.data?.value;
-  const response = outputNode?.data?.response;
 
-  if (!prompt || !response) {
-    toast.warning("Run the flow before saving");
+  if (!prompt) {
+    toast.warning("Please enter a message");
+    return;
+  }
+
+  let response = nodes.find((n) => n.id === "n2")?.data?.response;
+
+  // 🔥 AUTO RUN AI
+  if (!response) {
+    response = await runFlow();
+  }
+
+  if (!response) {
+    toast.error("AI response not generated");
     return;
   }
 
   try {
-    const res = await fetch(`${Backend_Url}/api/chat/save`, {
+    await fetch(`${Backend_Url}/api/chat/save`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt, response }),
     });
 
-    const data = await res.json();
-    console.log("SAVED:", data);
-    fetchChats()
-    toast.success("Chat saved successfully ✅");
+    fetchChats();
+    toast.success("Message saved successfully ✅");
   } catch (err) {
     console.error(err);
-    alert("Failed to save chat");
+    toast.error("Failed to save");
   }
 };
+
+
 
 
 
