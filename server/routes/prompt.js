@@ -22,7 +22,7 @@ promptRouter.post("/prompt",async function(req,res){
       "https://openrouter.ai/api/v1/chat/completions",
 
       {
-        model: "mistralai/mistral-7b-instruct:free",
+        model: "mistralai/mistral-7b-instruct",
         messages: [
 
           {
